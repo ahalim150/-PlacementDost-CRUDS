@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-5">
+            CRUD System <i class="fa-solid fa-laptop"></i>
+        </h1>
+
+        <label for="productName" class="mb-2">Product Name</label>
+        <input type="text" id="productName" class="form-control mb-4" placeholder="Ex. Samsung">
+
+        <label for="productPrice" class="mb-2">productPrice</label>
+        <input type="number" id="productPrice" class="form-control mb-4" placeholder="Ex. 9999">
+
+        <label for="productCategory" class="mb-2">product Category</label>
+        <input type="text" id="productCategory" class="form-control mb-4" placeholder="Ex. Mobile">
+
+        <label for="productDesc" class="mb-2">product Description</label>
+        <textarea type="text" id="productDesc" class="form-control mb-4" placeholder="Ex. Good"></textarea>
+
+        <button id="addUpdateBtn" onclick="addProduct()" class="btn btn-outline-light mb-5">Add Product</button>
+
+        <table class="table text-white text-center">
+            <thead>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Desc</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="tBody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
