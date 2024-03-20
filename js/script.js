@@ -34,22 +34,25 @@ function addProduct(){
 }
 
 function displayProducts(){
+    var searchTerm = document.getElementById("searchInput").value;
     var cartoona = ""
     for(i = 0 ; i < products.length ; i++){
+      if(products[i].name.toLowerCase().includes(searchTerm.toLowerCase())){
         cartoona += `
-        <tr>
-        <td>${i}</td>
-        <td>${products[i].name}</td>
-        <td>${products[i].price}</td>
-        <td>${products[i].category}</td>
-        <td>${products[i].desc}</td>
-        <td>
-            <button onclick="updateProduct(${i})" class="btn btn-outline-warning">Update</button>
-        </td>
-        <td>
-            <button onclick="deleteProduct(${i})" class="btn btn-outline-danger">Delete</button>
-        </td>
-        </tr>`
+          <tr>
+          <td>${i}</td>
+          <td>${products[i].name}</td>
+          <td>${products[i].price}</td>
+          <td>${products[i].category}</td>
+          <td>${products[i].desc}</td>
+          <td>
+              <button onclick="updateProduct(${i})" class="btn btn-outline-warning">Update</button>
+          </td>
+          <td>
+              <button onclick="deleteProduct(${i})" class="btn btn-outline-danger">Delete</button>
+          </td>
+          </tr>`
+      }
     }
     document.getElementById("tBody").innerHTML = cartoona;
 }
@@ -113,30 +116,30 @@ function updateProduct(index){
     document.getElementById("addUpdateBtn").innerHTML = "Update Product"
 }
 
-function search(){
-  var searchTerm = document.getElementById("searchInput").value;
-  var cartoona = ""
+// function search(){
+//   var searchTerm = document.getElementById("searchInput").value;
+//   var cartoona = ""
 
-  for (i = 0; i < products.length; i++) {
+//   for (i = 0; i < products.length; i++) {
 
-    if(products[i].name.toLowerCase().includes(searchTerm.toLowerCase())){
+//     if(products[i].name.toLowerCase().includes(searchTerm.toLowerCase())){
 
-      cartoona += `
-        <tr>
-        <td>${i}</td>
-        <td>${products[i].name}</td>
-        <td>${products[i].price}</td>
-        <td>${products[i].category}</td>
-        <td>${products[i].desc}</td>
-        <td>
-            <button onclick="updateProduct(${i})" class="btn btn-outline-warning">Update</button>
-        </td>
-        <td>
-            <button onclick="deleteProduct(${i})" class="btn btn-outline-danger">Delete</button>
-        </td>
-        </tr>`
-    }
-  }
-document.getElementById("tBody").innerHTML = cartoona;
+//       cartoona += `
+//         <tr>
+//         <td>${i}</td>
+//         <td>${products[i].name}</td>
+//         <td>${products[i].price}</td>
+//         <td>${products[i].category}</td>
+//         <td>${products[i].desc}</td>
+//         <td>
+//             <button onclick="updateProduct(${i})" class="btn btn-outline-warning">Update</button>
+//         </td>
+//         <td>
+//             <button onclick="deleteProduct(${i})" class="btn btn-outline-danger">Delete</button>
+//         </td>
+//         </tr>`
+//     }
+//   }
+// document.getElementById("tBody").innerHTML = cartoona;
 
-}
+// }
