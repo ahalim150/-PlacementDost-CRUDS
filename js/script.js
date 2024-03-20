@@ -138,4 +138,5 @@ function search(){
     }
   }
 document.getElementById("tBody").innerHTML = cartoona;
+
 }
